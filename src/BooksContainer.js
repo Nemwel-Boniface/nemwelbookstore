@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import './stylesheets/App.css';
 import Navbar from './components/Navbar';
 import Books from './components/Books';
+import Categories from './components/Categories';
 
 class BooksContainer extends Component {
   state = {
@@ -27,7 +28,7 @@ class BooksContainer extends Component {
         <Navbar />
         <Routes>
           <Route exact path='/' element={<Books myBooks={this.state.myBooks}/>} />
-          {/* <Route exact path='/categories' element={} /> */}
+          <Route exact path='/categories' element={<Categories />} />
         </Routes>
       </div>
     );
