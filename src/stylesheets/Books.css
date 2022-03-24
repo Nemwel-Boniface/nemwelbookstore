@@ -1,0 +1,6 @@
+.book {
+  box-shadow: -1px -1px 15px 2px rgba(192,181,181,1);
+  margin: 40px 4%;
+  padding: 15px;
+  border-radius: 10px;
+}
