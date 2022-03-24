@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Proptypes from 'prop-types';
 import AddBook from './AddBook';
 import Book from './Book';
 
-class Books extends Component {
-  render() {
-    const { myBooks } = this.props;
-    return (
-      <div className="books">
-        <ul>
-          {myBooks.map((book) => (
-            <Book key={book.id} book={book} />
-          ))}
-          <AddBook />
-        </ul>
-      </div>
-    );
-  }
+function Books(props) {
+  const { myBooks } = props;
+  return (
+    <div className="books">
+      <ul>
+        {myBooks.map((book) => (
+          <Book key={book.id} book={book} />
+        ))}
+        <AddBook />
+      </ul>
+    </div>
+  );
 }
 
 Books.propTypes = {

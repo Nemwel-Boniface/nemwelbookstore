@@ -27,11 +27,12 @@ class BooksContainer extends Component {
   }
 
   render() {
+    const { myBooks } = this.state;
     return (
       <div className="App">
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<Books myBooks={this.state.myBooks} />} />
+          <Route exact path="/" element={<Books myBooks={myBooks} />} />
           <Route exact path="/categories" element={<Categories />} />
         </Routes>
       </div>
