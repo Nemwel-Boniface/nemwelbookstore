@@ -36,7 +36,7 @@ In your terminal, navigate to your current directory and run this code
 
 Locate the directory in your file explorer
 
-`cd math-magicians`
+`cd nemwelbookstore`
 
 Install npm or if installed already using this link
 
