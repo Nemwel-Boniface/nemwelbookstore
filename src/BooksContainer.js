@@ -15,6 +15,9 @@ class BooksContainer extends Component {
         comments: 'Comments',
         remove: 'Remove',
         edit: "Edit",
+        currentChapter: 'Current chapter',
+        chapter: 'Chapter 21',
+        updateProgress: 'UPDATE PRGRESS'
       },
     ]
    };
