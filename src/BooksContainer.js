@@ -12,14 +12,14 @@ class BooksContainer extends Component {
       myBooks: [
         {
           id: 1,
-          genre: 'Action',
-          bkTitle: 'Book Title',
-          bkAuthor: 'Book Author',
+          genre: 'Red pill',
+          bkTitle: 'The Way of Men',
+          bkAuthor: 'Jack Donovan',
           comments: 'Comments',
           remove: 'Remove',
           edit: 'Edit',
           currentChapter: 'Current chapter',
-          chapter: 'Chapter 21',
+          chapter: 'Chapter 6',
           updateProgress: 'UPDATE PRGRESS',
         },
       ],
