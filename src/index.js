@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './Navbar.css';
-import App from './App';
+import './stylesheets/index.css';
+import './stylesheets/Navbar.css';
+import './stylesheets/Books.css';
+import BooksContainer from './BooksContainer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BooksContainer />
   </React.StrictMode>,
   document.getElementById('root'),
 );
