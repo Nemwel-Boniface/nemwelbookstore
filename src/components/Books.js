@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AddBook from './AddBook';
 import Book from './Book';
 
 class Books extends Component {
@@ -7,9 +8,9 @@ class Books extends Component {
       <div className='books'>
       <ul>
         {this.props.myBooks.map(book => (
-          // <li key={book.id}>{book.title}</li>
           <Book key={book.id} book={book} />
         ))}
+        <AddBook />
       </ul>
       </div>
     )

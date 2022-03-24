@@ -81,10 +81,6 @@
   font-weight: 700;
   font-size: 2em;
 }
-
-/* color animation */
-
-/* 3rd progress bar */
 .mask .fill {
   clip: rect(0px, 75px, 150px, 0px);
   background-color: #227ded;
@@ -109,7 +105,7 @@
 .bookRight h3 {
   margin-bottom: 10px;
 }
-.bookRight button {
+.bookbtn {
   padding: 10px;
   background-color: #227ded;
   color: #fff;
