@@ -2,22 +2,27 @@
   width: 100%;
   height: 150px;
 }
+
 .navbar nav {
   display: flex;
 }
+
 .navbar nav h1 {
   font-size: 37px;
   padding: 15px;
   color: #2274ee;
 }
+
 .navbar nav ul {
   display: flex;
   margin: auto 10%;
 }
+
 .navbar nav ul li {
   list-style-type: none;
   margin-right: 20px;
 }
+
 .navbar nav ul li a {
   font-size: 19px;
 }

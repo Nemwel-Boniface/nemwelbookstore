@@ -1,50 +1,67 @@
-import React, { Component } from 'react'
-<div className='individualbook'>
+import React, { Component } from 'react';
+import Proptypes from 'prop-types';
 
-</div>;
 class Book extends Component {
-  state = {  }
   render() {
+    const { book } = this.props;
+    const {
+      genre, bkTitle, bkAuthor,
+      comments, remove, edit, currentChapter,
+      chapter, updateProgress,
+    } = book;
     return (
-        <div className='book'>
-        <div className='bookLeft'>
-          <h3 className='genre blur'>{this.props.book.genre}</h3>
-          <h2 className='bookTitle'>{this.props.book.bkTitle}</h2>
-          <h3 className='bookAuthor'>{this.props.book.bkAuthor}</h3>
+      <div className="book">
+        <div className="bookLeft">
+          <h3 className="genre blur">{genre}</h3>
+          <h2 className="bookTitle">{bkTitle}</h2>
+          <h3 className="bookAuthor">{bkAuthor}</h3>
           <ul>
-            <li className='bar'><a href='$'>{this.props.book.comments}</a></li>
-            <li className='bar'><a href='$'>{this.props.book.remove}</a></li>
-            <li><a href='$'>{this.props.book.edit}</a></li>
+            <li className="bar"><a href="12">{comments}</a></li>
+            <li className="bar"><a href="12">{remove}</a></li>
+            <li><a href="$">{edit}</a></li>
           </ul>
         </div>
 
-        <div className='bookMiddle'>
-          <div class="circle-wrap">
-            <div class="circle">
-              <div class="mask full">
-                <div class="fill"></div>
+        <div className="bookMiddle">
+          <div className="circle-wrap">
+            <div className="circle">
+              <div className="mask full">
+                <div className="fill" />
               </div>
-              <div class="mask half">
-                <div class="fill"></div>
+              <div className="mask half">
+                <div className="fill" />
               </div>
-              <div class="inside-circle"></div>
+              <div className="inside-circle" />
             </div>
           </div>
 
-          <div className='percentages'>
+          <div className="percentages">
             <h2>75%</h2>
-            <p className='blur'>Completed</p>
+            <p className="blur">Completed</p>
           </div>
         </div>
 
-        <div className='bookRight'>
-          <h3 className='currentchapter blur'>{this.props.book.currentChapter}</h3>
-          <h3 className='chapter'>{this.props.book.chapter}</h3>
-          <button className='bookbtn'>{this.props.book.updateProgress}</button>
+        <div className="bookRight">
+          <h3 className="currentchapter blur">{currentChapter}</h3>
+          <h3 className="chapter">{chapter}</h3>
+          <button type="button" className="bookbtn">{updateProgress}</button>
         </div>
       </div>
     );
   }
 }
 
+Book.propTypes = {
+  book: Proptypes.shape({
+    genre: Proptypes.string.isRequired,
+    comments: Proptypes.string.isRequired,
+    bkAuthor: Proptypes.string.isRequired,
+    remove: Proptypes.string.isRequired,
+    edit: Proptypes.string.isRequired,
+    currentChapter: Proptypes.string.isRequired,
+    chapter: Proptypes.string.isRequired,
+    updateProgress: Proptypes.string.isRequired,
+    bkTitle: Proptypes.string.isRequired,
+  }).isRequired,
+};
 export default Book;

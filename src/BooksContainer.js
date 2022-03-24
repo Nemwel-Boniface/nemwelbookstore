@@ -6,29 +6,33 @@ import Books from './components/Books';
 import Categories from './components/Categories';
 
 class BooksContainer extends Component {
-  state = {
-    myBooks: [
-      {
-        id: 1,
-        genre: 'Action',
-        bkTitle: 'Book Title',
-        bkAuthor: 'Book Author',
-        comments: 'Comments',
-        remove: 'Remove',
-        edit: "Edit",
-        currentChapter: 'Current chapter',
-        chapter: 'Chapter 21',
-        updateProgress: 'UPDATE PRGRESS'
-      },
-    ]
-   };
+  constructor(props) {
+    super(props);
+    this.state = {
+      myBooks: [
+        {
+          id: 1,
+          genre: 'Action',
+          bkTitle: 'Book Title',
+          bkAuthor: 'Book Author',
+          comments: 'Comments',
+          remove: 'Remove',
+          edit: 'Edit',
+          currentChapter: 'Current chapter',
+          chapter: 'Chapter 21',
+          updateProgress: 'UPDATE PRGRESS',
+        },
+      ],
+    };
+  }
+
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <Navbar />
         <Routes>
-          <Route exact path='/' element={<Books myBooks={this.state.myBooks}/>} />
-          <Route exact path='/categories' element={<Categories />} />
+          <Route exact path="/" element={<Books myBooks={this.state.myBooks} />} />
+          <Route exact path="/categories" element={<Categories />} />
         </Routes>
       </div>
     );

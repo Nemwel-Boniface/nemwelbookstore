@@ -1,18 +1,21 @@
 
-/*Styling for the form*/
+/* Styling for the form */
 .addnewbook {
   margin: 40px 4%;
 }
+
 .form input {
   width: 55%;
   padding: 10px;
   margin-right: 30px;
 }
+
 .form select {
   width: 25%;
   padding: 10px;
   margin-right: 30px;
 }
+
 .form button {
   width: 12%;
 }
