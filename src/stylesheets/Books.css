@@ -1,0 +1,127 @@
+.book {
+  box-shadow: -1px -1px 15px 2px rgba(192, 181, 181, 1);
+  margin: 40px 4%;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blur {
+  opacity: 0.5;
+}
+
+/* Styling for the left side of our book panel */
+.bookLeft .bookTitle {
+  font-size: 36px;
+}
+
+.bookLeft .bookAuthor {
+  color: #2274ee;
+}
+
+.bookLeft ul {
+  display: flex;
+  position: relative;
+  left: -40px;
+}
+
+.bookLeft ul li {
+  list-style-type: none;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
+.bookLeft ul .bar {
+  border-right: 2px solid #000;
+}
+
+.bookLeft ul li a {
+  text-decoration: none;
+}
+
+/* Styling for the middle part of our books panel containing the progress bar */
+.bookMiddle {
+  display: flex;
+  gap: 30px;
+  margin: auto 0;
+}
+
+.percentages {
+  margin-left: 30px;
+}
+
+.percentages h2 {
+  font-size: 35px;
+}
+
+.circle-wrap {
+  margin: auto auto;
+  width: 120px;
+  height: 120px;
+  background: lightgray;
+  border-radius: 50%;
+  border: 1px solid #cdcbd0;
+}
+
+.mask .fill {
+  clip: rect(0, 75px, 150px, 0);
+  background-color: #227ded;
+}
+
+.mask.full,
+.circle .fill {
+  animation: fill ease-in-out 3s;
+  transform: rotate(135deg);
+}
+
+.circle-wrap .circle .mask,
+.circle-wrap .circle .fill {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle-wrap .circle .mask {
+  clip: rect(0, 150px, 150px, 75px);
+}
+
+.circle-wrap .inside-circle {
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  background: #d2eaf1;
+  line-height: 120px;
+  text-align: center;
+  margin-top: 14px;
+  margin-left: 14px;
+  color: #1e51dc;
+  position: absolute;
+  z-index: 100;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+@keyframes fill {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(135deg);
+  }
+}
+
+/* Styling for the book right side */
+.bookRight h3 {
+  margin-bottom: 10px;
+}
+
+.bookbtn {
+  padding: 10px;
+  background-color: #227ded;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+}
