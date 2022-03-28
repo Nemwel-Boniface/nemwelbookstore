@@ -2,7 +2,7 @@ import * as actions from './actionTypes';
 
 let lastId = 0;
 
-const reducer = (state = [], action) => {
+const booksReducer = (state = [], action) => {
   switch(action.type) {
     case actions.ADDBOOK:
       return [
@@ -21,7 +21,7 @@ const reducer = (state = [], action) => {
 }
 
 
-const addNewBook = ({ bkAUthor, bkCategory }) => ({
+export const addNewBook = ({ bkAUthor, bkCategory }) => ({
   type: actions.ADDBOOK,
   payLoad: {
     id: ++lastId,
@@ -30,11 +30,11 @@ const addNewBook = ({ bkAUthor, bkCategory }) => ({
   }
 })
 
-const removeBook = (id) => ({
+export const removeBook = (id) => ({
   type: actions.REMOVEBOOK,
   payLoad: {
     id,
   }
 })
 
-export default reducer;
+export default booksReducer;
