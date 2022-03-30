@@ -15,9 +15,15 @@ function Book(props) {
         <h2 className="bookTitle">{bkTitle}</h2>
         <h3 className="bookAuthor">{bkAuthor}</h3>
         <ul>
-          <li className="bar"><a href="12">{comments}</a></li>
-          <li className="bar"><a href="12">{remove}</a></li>
-          <li><a href="$">{edit}</a></li>
+          <li className="bar">
+            <button type="button">{comments}</button>
+          </li>
+          <li className="bar">
+            <button type="button">{remove}</button>
+          </li>
+          <li>
+            <button type='button'>{edit}</button>
+          </li>
         </ul>
       </div>
 
