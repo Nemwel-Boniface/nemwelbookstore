@@ -6,19 +6,11 @@ import Books from './components/Books';
 import Categories from './components/Categories';
 
 const BooksContainer = () => {
-  const myBooks = [
-    {
-      id: 1,
-      genre: 'Red pill',
-      bkTitle: 'The Way of Men',
-      bkAuthor: 'Jack Donovan',
-    },
-  ];
   return (
     <div className="App">
       <Navbar />
       <Routes>
-        <Route exact path="/" element={<Books myBooks={myBooks} />} />
+        <Route exact path="/" element={<Books />} />
         <Route exact path="/categories" element={<Categories />} />
       </Routes>
     </div>

@@ -5,7 +5,6 @@ import AddBook from './AddBook';
 import Book from './Book';
 
 function Books(props) {
-  // const { myBooks } = props;
   const books = useSelector( state => state.booksReducer);
   if( books !== []) {
     return (
@@ -19,11 +18,15 @@ function Books(props) {
       </div>
     );
   }
-  return (<h2>Please add a book</h2>);
+  return (
+    <div className='books'>
+      <h2>Please add a book</h2>
+    </div>
+  );
 }
 
 Books.propTypes = {
-  myBooks: Proptypes.arrayOf(
+  books: Proptypes.arrayOf(
     Proptypes.shape({}),
   ).isRequired,
 };
