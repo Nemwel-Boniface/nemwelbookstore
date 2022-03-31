@@ -5,8 +5,6 @@ function Book(props) {
   const { book } = props;
   const {
     genre, bkTitle, bkAuthor,
-    comments, remove, edit, currentChapter,
-    chapter, updateProgress,
   } = book;
   return (
     <div className="book">
@@ -16,13 +14,13 @@ function Book(props) {
         <h3 className="bookAuthor">{bkAuthor}</h3>
         <ul>
           <li className="bar">
-            <button type="button">{comments}</button>
+            <button type="button">Comments</button>
           </li>
           <li className="bar">
-            <button type="button">{remove}</button>
+            <button type="button">Remove</button>
           </li>
           <li>
-            <button type='button'>{edit}</button>
+            <button type='button'>Edit</button>
           </li>
         </ul>
       </div>
@@ -47,9 +45,9 @@ function Book(props) {
       </div>
 
       <div className="bookRight">
-        <h3 className="currentchapter blur">{currentChapter}</h3>
-        <h3 className="chapter">{chapter}</h3>
-        <button type="button" className="bookbtn">{updateProgress}</button>
+        <h3 className="currentchapter blur">Current chapter</h3>
+        <h3 className="chapter">Chapter 6</h3>
+        <button type="button" className="bookbtn">UPDATE PRGRESS</button>
       </div>
     </div>
   );
@@ -58,13 +56,7 @@ function Book(props) {
 Book.propTypes = {
   book: Proptypes.shape({
     genre: Proptypes.string.isRequired,
-    comments: Proptypes.string.isRequired,
     bkAuthor: Proptypes.string.isRequired,
-    remove: Proptypes.string.isRequired,
-    edit: Proptypes.string.isRequired,
-    currentChapter: Proptypes.string.isRequired,
-    chapter: Proptypes.string.isRequired,
-    updateProgress: Proptypes.string.isRequired,
     bkTitle: Proptypes.string.isRequired,
   }).isRequired,
 };

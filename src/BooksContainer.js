@@ -12,12 +12,6 @@ const BooksContainer = () => {
       genre: 'Red pill',
       bkTitle: 'The Way of Men',
       bkAuthor: 'Jack Donovan',
-      comments: 'Comments',
-      remove: 'Remove',
-      edit: 'Edit',
-      currentChapter: 'Current chapter',
-      chapter: 'Chapter 6',
-      updateProgress: 'UPDATE PRGRESS',
     },
   ];
   return (
