@@ -6,23 +6,17 @@ import Book from './Book';
 
 function Books(props) {
   const books = useSelector( state => state.booksReducer);
-  if( books !== []) {
-    return (
-      <div className="books">
-        <ul>
-          {books.map((book) => (
-            <Book key={book.id} book={book} />
-          ))}
-          <AddBook />
-        </ul>
-      </div>
-    );
-  }
   return (
-    <div className='books'>
-      <h2>Please add a book</h2>
+    <div className="books">
+      <ul>
+        {books.map((book) => (
+          <Book key={book.id} book={book} />
+        ))}
+        <AddBook />
+      </ul>
     </div>
   );
+
 }
 
 Books.propTypes = {
