@@ -9,7 +9,7 @@ const booksReducer = (state = bkArray, action) => {
         ...state, action.payLoad,
       ];
     case actions.REMOVEBOOK:
-      return [ ...state.filter((bk) => bk.id !== action.payLoad.id) ];
+      return [...state.filter((bk) => bk.id !== action.payLoad.id)];
     default:
       return state;
   }

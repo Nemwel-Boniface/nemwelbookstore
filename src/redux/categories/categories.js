@@ -11,7 +11,7 @@ const categoriesReducer = (state = [], action) => {
 
 export const checkStatus = (book) => ({
   type: CHECKSTATUS,
-  book
+  book,
 });
 
 export default categoriesReducer;
