@@ -1,23 +1,31 @@
 import React from 'react';
 import Proptypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
 function Book(props) {
   const { book } = props;
   const {
-    genre, bkTitle, bkAuthor,
-    comments, remove, edit, currentChapter,
-    chapter, updateProgress,
+    genre, title, author,
   } = book;
+
+  const dispatch = useDispatch();
   return (
     <div className="book">
       <div className="bookLeft">
         <h3 className="genre blur">{genre}</h3>
-        <h2 className="bookTitle">{bkTitle}</h2>
-        <h3 className="bookAuthor">{bkAuthor}</h3>
+        <h2 className="bookTitle">{title}</h2>
+        <h3 className="bookAuthor">{author}</h3>
         <ul>
-          <li className="bar"><a href="12">{comments}</a></li>
-          <li className="bar"><a href="12">{remove}</a></li>
-          <li><a href="$">{edit}</a></li>
+          <li className="bar">
+            <button type="button">Comments</button>
+          </li>
+          <li className="bar">
+            <button type="button" onClick={() => dispatch(removeBook(book.id))}>Remove</button>
+          </li>
+          <li>
+            <button type="button">Edit</button>
+          </li>
         </ul>
       </div>
 
@@ -41,9 +49,9 @@ function Book(props) {
       </div>
 
       <div className="bookRight">
-        <h3 className="currentchapter blur">{currentChapter}</h3>
-        <h3 className="chapter">{chapter}</h3>
-        <button type="button" className="bookbtn">{updateProgress}</button>
+        <h3 className="currentchapter blur">Current chapter</h3>
+        <h3 className="chapter">Chapter 6</h3>
+        <button type="button" className="bookbtn">UPDATE PRGRESS</button>
       </div>
     </div>
   );
@@ -52,14 +60,9 @@ function Book(props) {
 Book.propTypes = {
   book: Proptypes.shape({
     genre: Proptypes.string.isRequired,
-    comments: Proptypes.string.isRequired,
-    bkAuthor: Proptypes.string.isRequired,
-    remove: Proptypes.string.isRequired,
-    edit: Proptypes.string.isRequired,
-    currentChapter: Proptypes.string.isRequired,
-    chapter: Proptypes.string.isRequired,
-    updateProgress: Proptypes.string.isRequired,
-    bkTitle: Proptypes.string.isRequired,
+    author: Proptypes.string.isRequired,
+    title: Proptypes.string.isRequired,
+    id: Proptypes.number.isRequired,
   }).isRequired,
 };
 export default Book;
