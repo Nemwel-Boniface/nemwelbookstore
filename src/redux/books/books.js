@@ -1,6 +1,19 @@
 import * as actions from './actionTypes';
 
-const bkArray = [];
+const bkArray = [
+  {
+    id: 1,
+    author: 'Jack Donovan',
+    title: 'The Way of Men',
+    genre: 'Red Pill',
+  },
+  {
+    id: 1,
+    author: 'Phil Knight',
+    title: 'Shoe Dog',
+    genre: 'Biography',
+  },
+];
 
 const booksReducer = (state = bkArray, action) => {
   switch (action.type) {
