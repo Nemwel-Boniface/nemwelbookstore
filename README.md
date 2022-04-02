@@ -26,7 +26,7 @@ Enjoy!
 ## Live Demo
 
 This project was deployed to two places:
-- [Netlify](https://soft-jelly-193e77.netlify.app/)
+- [Netlify](https://frolicking-moxie-28e4cc.netlify.app/)
 - [Heroku]() none at the moment
 
 
