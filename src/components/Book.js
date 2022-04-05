@@ -6,14 +6,14 @@ import { removeBook } from '../redux/books/books';
 function Book(props) {
   const { book } = props;
   const {
-    genre, title, author,
+    category, title, author,
   } = book;
 
   const dispatch = useDispatch();
   return (
     <div className="book">
       <div className="bookLeft">
-        <h3 className="genre blur">{genre}</h3>
+        <h3 className="genre blur">{category}</h3>
         <h2 className="bookTitle">{title}</h2>
         <h3 className="bookAuthor">{author}</h3>
         <ul>
@@ -21,7 +21,7 @@ function Book(props) {
             <button type="button">Comments</button>
           </li>
           <li className="bar">
-            <button type="button" onClick={() => dispatch(removeBook(book.id))}>Remove</button>
+            <button type="button" onClick={() => dispatch(removeBook(book.item_id))}>Remove</button>
           </li>
           <li>
             <button type="button">Edit</button>
@@ -59,10 +59,10 @@ function Book(props) {
 
 Book.propTypes = {
   book: Proptypes.shape({
-    genre: Proptypes.string.isRequired,
+    category: Proptypes.string.isRequired,
     author: Proptypes.string.isRequired,
     title: Proptypes.string.isRequired,
-    id: Proptypes.number.isRequired,
+    item_id: Proptypes.number.isRequired,
   }).isRequired,
 };
 export default Book;

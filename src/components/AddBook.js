@@ -10,10 +10,10 @@ const AddBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newBook = {
-      id: Math.floor(Math.random() * 21),
+      item_id: Math.floor(Math.random() * 21),
       author,
       title,
-      genre: document.getElementById('bookgenre').value,
+      category: document.getElementById('bookgenre').value,
     };
     dispatch(addNewBook(newBook));
     setAuthor('');

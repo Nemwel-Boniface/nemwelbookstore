@@ -1,4 +1,6 @@
 import * as actions from './actionTypes';
+// const uniqueID = 'jpzpwwUdhjgaVhh6l7RE';
+const baseURL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/jpzpwwUdhjgaVhh6l7RE/books/`;
 
 const bkArray = [];
 
@@ -15,10 +17,23 @@ const booksReducer = (state = bkArray, action) => {
   }
 };
 
-export const addNewBook = (book) => ({
-  type: actions.ADDBOOK,
-  payLoad: book,
-});
+export const addNewBook = (book) => (dispatch) => fetch (
+  baseURL, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+    body: JSON.stringify(book),
+  })
+    .then((response) => {
+      if(response.ok) {
+        dispatch({
+          type: actions.ADDBOOK,
+          payLoad: book,
+        })
+      }
+    });
+
 
 export const removeBook = (id) => ({
   type: actions.REMOVEBOOK,
