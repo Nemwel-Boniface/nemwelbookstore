@@ -1,5 +1,6 @@
+// import axios from 'axios';
 import * as actions from './actionTypes';
-// const uniqueID = 'jpzpwwUdhjgaVhh6l7RE';
+
 const baseURL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/jpzpwwUdhjgaVhh6l7RE/books/`;
 
 const bkArray = [];
@@ -11,7 +12,11 @@ const booksReducer = (state = bkArray, action) => {
         ...state, action.payLoad,
       ];
     case actions.REMOVEBOOK:
-      return [...state.filter((bk) => bk.id !== action.payLoad.id)];
+      return [...state.filter((bk) => bk.bookID !== action.item_id)];
+    case actions.GETBOOK:
+      return [
+        ...action.payLoad,
+      ]
     default:
       return state;
   }
@@ -21,7 +26,7 @@ export const addNewBook = (book) => (dispatch) => fetch (
   baseURL, {
     method: 'POST',
     headers: {
-      'Content-type': 'application/json; charset=UTF-8',
+      'Content-type': 'application/json; charset=UTF-8'
     },
     body: JSON.stringify(book),
   })
@@ -34,12 +39,20 @@ export const addNewBook = (book) => (dispatch) => fetch (
       }
     });
 
+export const getBookFromAPI = () => (dispatch) => fetch(baseURL)
+.then((res) => res.json()).then((data)=> {
+  const books = Object.keys(data).map((key) => {
+    const book = data[key][0];
+    return book;
+  })
+  dispatch({type: actions.GETBOOK, payLoad: books})
+}).catch(() => {});
 
-export const removeBook = (id) => ({
-  type: actions.REMOVEBOOK,
-  payLoad: {
-    id,
-  },
-});
+  export const removeBook = (id) => ({
+    type: actions.REMOVEBOOK,
+    payLoad: {
+      id,
+    },
+  });
 
 export default booksReducer;

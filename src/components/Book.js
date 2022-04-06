@@ -6,7 +6,7 @@ import { removeBook } from '../redux/books/books';
 function Book(props) {
   const { book } = props;
   const {
-    category, title, author,
+   item_id , category, title, author,
   } = book;
 
   const dispatch = useDispatch();
