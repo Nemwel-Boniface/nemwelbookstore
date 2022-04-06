@@ -12,7 +12,9 @@ const booksReducer = (state = bkArray, action) => {
         ...state, action.payLoad,
       ];
     case actions.REMOVEBOOK:
-      return [...state.filter((bk) => bk.bookID !== action.item_id)];
+      return [
+        ...state.filter((book) => book.id !== action.id),
+      ];
     case actions.GETBOOK:
       return [
         ...action.payLoad,
@@ -43,16 +45,34 @@ export const getBookFromAPI = () => (dispatch) => fetch(baseURL)
 .then((res) => res.json()).then((data)=> {
   const books = Object.keys(data).map((key) => {
     const book = data[key][0];
-    return book;
+    return {
+      id: key,
+      ...book,
+      };
   })
   dispatch({type: actions.GETBOOK, payLoad: books})
 }).catch(() => {});
 
-  export const removeBook = (id) => ({
-    type: actions.REMOVEBOOK,
-    payLoad: {
-      id,
+export const removeBook = (bookID) => async (dispatch) => {
+  const body = {
+    item_id: bookID,
+  }
+return await fetch (
+  `${baseURL}${bookID}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8'
     },
-  });
+    body: JSON.stringify(body),
+  })
+    .then((response) => {
+      if(response.ok) {
+        dispatch({
+          type: actions.REMOVEBOOK,
+          id: bookID,
+        })
+      }
+    }).catch(() => {});
+  }
 
 export default booksReducer;

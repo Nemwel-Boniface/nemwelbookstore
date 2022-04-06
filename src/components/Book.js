@@ -21,7 +21,7 @@ function Book(props) {
             <button type="button">Comments</button>
           </li>
           <li className="bar">
-            <button type="button" onClick={() => dispatch(removeBook(book.item_id))}>Remove</button>
+            <button type="button" onClick={() => dispatch(removeBook(book.id))}>Remove</button>
           </li>
           <li>
             <button type="button">Edit</button>
@@ -62,7 +62,6 @@ Book.propTypes = {
     category: Proptypes.string.isRequired,
     author: Proptypes.string.isRequired,
     title: Proptypes.string.isRequired,
-    item_id: Proptypes.number.isRequired,
   }).isRequired,
 };
 export default Book;
