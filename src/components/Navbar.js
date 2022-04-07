@@ -9,6 +9,7 @@ const Navbar = () => (
         <li><Link to="/">BOOKS</Link></li>
         <li><Link to="/categories">CATEGORIES</Link></li>
       </ul>
+      <i class="fa fa-user" aria-hidden="true"></i>
     </nav>
   </div>
 );
