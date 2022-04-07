@@ -7,14 +7,13 @@
 .navbar nav {
   display: flex;
   position: relative;
-
-  /* justify-content: space-around; */
 }
 
 .navbar nav h1 {
   font-size: 37px;
   padding: 15px;
   color: #2274ee;
+  margin-left: 70px;
 }
 
 .navbar nav ul {
@@ -51,7 +50,7 @@
   margin: auto 0;
   display: flex;
   position: relative;
-  right: -23%;
+  right: -19%;
   color: #2274ee;
   padding: 15px;
   border-radius: 50%;
