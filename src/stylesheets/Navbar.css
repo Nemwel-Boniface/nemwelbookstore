@@ -7,6 +7,7 @@
 .navbar nav {
   display: flex;
   position: relative;
+
   /* justify-content: space-around; */
 }
 
@@ -29,19 +30,23 @@
 .navbar nav ul li a {
   font-size: 19px;
   color: #000;
-  opacity: .5;
+  opacity: 0.5;
   text-decoration: none;
 }
+
 .navbar nav ul li a:active {
   opacity: 1;
 }
+
 .navbar nav ul li a:hover {
   opacity: 1;
 }
+
 .navbar nav ul li a:focus {
   opacity: 1;
 }
-.navbar nav i{
+
+.navbar nav i {
   cursor: pointer;
   margin: auto 0;
   display: flex;
