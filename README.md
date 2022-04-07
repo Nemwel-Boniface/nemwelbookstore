@@ -2,7 +2,7 @@
 
 # Nemwel Bookstore
 
-Nemwel Bookstore is a simple CRUD application for listing books built with React and Redux.
+Nemwel Bookstore is a simple CRUD application for listing books built with React and Redux. It posts and retrieved books information from an API.
 It currently allows you to:
 - Add a new book allowing you to specify a book's:
   - Author
@@ -20,13 +20,15 @@ Enjoy!
 - CSS
 - Javascript
 - React
+- Redux
+- API
 - Webpack
 - Linters
 
 ## Live Demo
 
 This project was deployed to two places:
-- [Netlify](https://soft-jelly-193e77.netlify.app/)
+- [Netlify](https://papaya-biscochitos-303a27.netlify.app/)
 - [Heroku]() none at the moment
 
 

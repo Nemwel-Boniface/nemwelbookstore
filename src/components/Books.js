@@ -1,10 +1,16 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import AddBook from './AddBook';
 import Book from './Book';
+import { getBookFromAPI } from '../redux/books/books';
 
-function Books() {
+const Books = () => {
   const books = useSelector((state) => state.booksReducer);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBookFromAPI());
+  }, []);
   return (
     <div className="books">
       <ul>
@@ -15,6 +21,6 @@ function Books() {
       </ul>
     </div>
   );
-}
+};
 
 export default Books;

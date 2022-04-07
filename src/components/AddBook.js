@@ -10,10 +10,10 @@ const AddBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newBook = {
-      id: Math.floor(Math.random() * 21),
+      item_id: Math.floor(Math.random() * 51),
       author,
       title,
-      genre: document.getElementById('bookgenre').value,
+      category: document.getElementById('bookgenre').value,
     };
     dispatch(addNewBook(newBook));
     setAuthor('');
@@ -27,14 +27,14 @@ const AddBook = () => {
         <input name="title" type="text" placeholder="Book title" value={title} onChange={(e) => setTitle(e.target.value)} required />
         <input name="author" type="text" placeholder="Author" value={author} onChange={(e) => setAuthor(e.target.value)} required />
 
-        <select name="books" id="bookgenre" defaultValue="Categories">
-          <option value="Categories" selected>Categories</option>
-          <option value="redpill">Red pill</option>
-          <option value="Action">Action</option>
-          <option value="Thriller">Thriller</option>
-          <option value="Horror">Horror</option>
+        <select name="books" id="bookgenre">
+          <option value="Categories">Categories</option>
+          <option value="Red pill">Red pill</option>
+          <option value="Education">Education</option>
+          <option value="Nutrition">Nutrition</option>
           <option value="Historical">Historical</option>
           <option value="Kids">Kids</option>
+          <option value="Thriller">Thriller</option>
         </select>
         <button type="submit" className="bookbtn">ADD BOOK</button>
       </form>
