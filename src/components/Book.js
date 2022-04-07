@@ -18,13 +18,13 @@ function Book(props) {
         <h3 className="bookAuthor">{author}</h3>
         <ul>
           <li className="bar">
-            <button type="button">Comments</button>
+            <button className='leftbtn' type="button">Comments</button>
           </li>
           <li className="bar">
-            <button type="button" onClick={() => dispatch(removeBook(book.id))}>Remove</button>
+            <button className='leftbtn' type="button" onClick={() => dispatch(removeBook(book.id))}>Remove</button>
           </li>
           <li>
-            <button type="button">Edit</button>
+            <button className='leftbtn' type="button">Edit</button>
           </li>
         </ul>
       </div>
