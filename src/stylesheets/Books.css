@@ -36,8 +36,12 @@
   border-right: 2px solid #000;
 }
 
-.bookLeft ul li a {
-  text-decoration: none;
+.leftbtn {
+  outline: none;
+  border: none;
+  background-color: #fff;
+  color: #227ded;
+  cursor: pointer;
 }
 
 /* Styling for the middle part of our books panel containing the progress bar */
@@ -57,8 +61,8 @@
 
 .circle-wrap {
   margin: auto auto;
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   background: lightgray;
   border-radius: 50%;
   border: 1px solid #cdcbd0;
@@ -77,8 +81,8 @@
 
 .circle-wrap .circle .mask,
 .circle-wrap .circle .fill {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   position: absolute;
   border-radius: 50%;
 }
@@ -88,14 +92,14 @@
 }
 
 .circle-wrap .inside-circle {
-  width: 118px;
-  height: 118px;
+  width: 103px;
+  height: 103px;
   border-radius: 50%;
-  background: #d2eaf1;
+  background: #fff;
   line-height: 120px;
   text-align: center;
-  margin-top: 14px;
-  margin-left: 14px;
+  margin-top: 9px;
+  margin-left: 9px;
   color: #1e51dc;
   position: absolute;
   z-index: 100;
@@ -124,4 +128,9 @@
   color: #fff;
   margin-top: 20px;
   cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.bookbtn:hover {
+  transform: translateY(-7px);
 }
